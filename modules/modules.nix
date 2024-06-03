@@ -80,6 +80,7 @@ let
     ./programs/command-not-found/command-not-found.nix
     ./programs/comodoro.nix
     ./programs/darcs.nix
+    ./programs/digikam.nix
     ./programs/dircolors.nix
     ./programs/direnv.nix
     ./programs/discocss.nix
