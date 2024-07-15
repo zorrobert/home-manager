@@ -276,6 +276,7 @@ let
     ./services/barrier.nix
     ./services/batsignal.nix
     ./services/betterlockscreen.nix
+    ./services/blanket.nix
     ./services/blueman-applet.nix
     ./services/borgmatic.nix
     ./services/cachix-agent.nix
@@ -302,6 +303,7 @@ let
     ./services/fusuma.nix
     ./services/getmail.nix
     ./services/git-sync.nix
+    ./services/glance.nix
     ./services/gnome-keyring.nix
     ./services/gpg-agent.nix
     ./services/grobi.nix
