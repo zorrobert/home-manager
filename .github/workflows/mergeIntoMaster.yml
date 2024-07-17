@@ -21,6 +21,8 @@ jobs:
       - name: Merge branches into master
         run: |
           git checkout master
+          echo "add nix-community/home-manager as upstream"
+          git remote add upstream https://github.com/nix-community/home-manager.git
           echo "merge all branches"
           git branch --all | sed 's/  remotes\///g' | sed 's/\/master//g' | sed 's/\/dev//g' | sed 's/\/HEAD//g' | grep "origin/" | xargs -L1 git merge
           echo "force-push all changes to master"
