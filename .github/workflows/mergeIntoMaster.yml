@@ -1,0 +1,13 @@
+on: push
+jobs:
+  merge-branches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Git
+        run: |
+          git config --global user.name "zorrobert"
+          git config --global user.email "robert.lotz@mailbox.org"
+      - name: Fetch all branches
+        run: git fetch --all
