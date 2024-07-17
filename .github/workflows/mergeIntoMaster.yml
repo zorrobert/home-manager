@@ -20,7 +20,7 @@ jobs:
           BRANCHES=$(git branch --all | sed 's/  remotes\///g' | sed 's/\/master//g' | sed 's/\/dev//g' | sed 's/\/HEAD//g' | grep "origin/") 
           # | xargs -L1 git merge
           for branch in $BRANCHES; do
-            echo branch
+            echo $branch
           done
           echo "echo exit"
           
