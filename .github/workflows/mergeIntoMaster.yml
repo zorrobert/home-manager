@@ -12,20 +12,17 @@ jobs:
           git config --global user.email "robert.lotz@mailbox.org"
       - name: Fetch all branches
         run: git fetch --all
-      - name: Update master from upstream
+      - name: Reset master to upstream
         run: |
-          echo "STUB: Update master from upstream"
+          echo "reset master branch to upstream"
+          git checkout master
+          git reset --hard upstream/master
+          echo "branch master reset to upstream"
       - name: Merge branches into master
         run: |
           git checkout master
-
-          echo "echo info"
-          BRANCHES=$(git branch --all | sed 's/  remotes\///g' | sed 's/\/master//g' | sed 's/\/dev//g' | sed 's/\/HEAD//g' | grep "origin/") 
-          # | xargs -L1 git merge
-          for branch in $BRANCHES; do
-            echo "Merging $branch into master..."
-            git merge $branch
-            echo "Merged $branch into master..."
-          done
-          echo "echo exit"
-          
+          echo "merge all branches"
+          git branch --all | sed 's/  remotes\///g' | sed 's/\/master//g' | sed 's/\/dev//g' | sed 's/\/HEAD//g' | grep "origin/" | xargs -L1 git merge
+          echo "force-push all changes to master"
+          git push --force
+          echo "done"
